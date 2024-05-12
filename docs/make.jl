@@ -20,7 +20,14 @@ makedocs(;
         assets=String["assets/citations.css"],
     ),
     pages=[
-        "Home" => "index.md",
+        "index.md",
+        "utils.md",
+        "Implemented Distributions" => [
+            "distros/GenGamma.md",
+            "distros/PGW.md",
+            "distros/EW.md",
+        ],
+        "references.md"
     ],
 )
 
