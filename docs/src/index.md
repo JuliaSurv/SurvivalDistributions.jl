@@ -4,7 +4,7 @@ CurrentModule = SurvivalDistributions
 
 # SurvivalDistributions
 
-Documentation for [SurvivalDistributions](https://github.com/lrnv/SurvivalDistributions.jl).
+Documentation for [SurvivalDistributions](https://github.com/JuliaSurv/SurvivalDistributions.jl).
 
 ```@index
 ```

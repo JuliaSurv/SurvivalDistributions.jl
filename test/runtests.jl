@@ -1,10 +1,3 @@
-using SurvivalDistributions
-using Test
-using Aqua
+using TestItemRunner
 
-@testset "SurvivalDistributions.jl" begin
-    @testset "Code quality (Aqua.jl)" begin
-        Aqua.test_all(SurvivalDistributions)
-    end
-    # Write your tests here.
-end
+@run_package_tests
