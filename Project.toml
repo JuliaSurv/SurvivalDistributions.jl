@@ -8,15 +8,19 @@ Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 
 [compat]
+Aqua = "0.8"
 Distributions = "0.25"
+HypothesisTests = "0.11"
+SpecialFunctions = "2"
 Test = "1.6"
 TestItemRunner = "0.2"
 julia = "1.6.7"
 
 [extras]
 Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
+HypothesisTests = "09f84164-cd44-5f33-b23f-e6b0d136a0d5"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 TestItemRunner = "f8b46487-2199-4994-9208-9a1283c18c0a"
 
 [targets]
-test = ["Aqua", "Test", "TestItemRunner"]
+test = ["Aqua", "Test", "TestItemRunner", "HypothesisTests"]
