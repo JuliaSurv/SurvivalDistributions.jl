@@ -2,7 +2,9 @@
 
 ## Definition
 
-The `PiecewiseConstantHazardDistribution` are distribution defined by the hazard function, which is assumed to be piecewise constant (hence their names). This is common in survival analysis when we extract a life random variable from census data, given e.g. as a `Ratetable` from `RateTables.jl`. 
+The `PiecewiseConstantHazardDistribution` is one of the most simple and yet most usefull distribution provided in this package. These distributions are defined by their hazard functions, which are assumed to be piecewise constant (hence their names). 
+
+While dealing with census data and rate tables, having a survival model defined by a piecewise constant hazard is very common. In particular, random lifes extracted from `RateTable`s from [`RateTables.jl`](https://github.com/JuliaSurv/RateTables.jl) follows this pattern. 
 
 
 ## Examples

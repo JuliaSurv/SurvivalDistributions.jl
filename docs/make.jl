@@ -23,11 +23,11 @@ makedocs(;
         "index.md",
         "utils.md",
         "Implemented Distributions" => [
+            "distros/PCHD.md",
             "distros/GenGamma.md",
             "distros/PGW.md",
             "distros/EW.md",
             "distros/LogLogistic.md",
-            "distros/PCHD.md"
         ],
         "references.md"
     ],
