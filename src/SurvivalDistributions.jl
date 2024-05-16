@@ -4,8 +4,8 @@ module SurvivalDistributions
 
     using SpecialFunctions: loggamma
 
-    using Distributions: logcdf, logccdf, ccdf, cdf, pdf, logpdf, quantile, rand, ContinuousUnivariateDistribution, UnivariateDistribution, @distr_support, AbstractRNG, Weibull, Gamma, Logistic
-    import Distributions: logcdf, logccdf, ccdf, cdf, pdf, logpdf, quantile, rand
+    using Distributions: logcdf, logccdf, ccdf, cdf, pdf, logpdf, quantile, rand, ContinuousUnivariateDistribution, UnivariateDistribution, @distr_support, AbstractRNG, Weibull, Gamma, Logistic, expectation
+    import Distributions: logcdf, logccdf, ccdf, cdf, pdf, logpdf, quantile, rand, expectation
 
     # Export a few utilities : 
     include("utilities.jl")

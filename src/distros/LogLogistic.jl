@@ -16,22 +16,23 @@ where α = e^μ and β = 1/σ.
 struct LogLogistic{T<:Real} <: ContinuousUnivariateDistribution
     X::Logistic{T}
     function LogLogistic(μ,σ)
-        X = Logistic(T(μ), T(σ))
+        X = Logistic(μ, σ)
         return new{eltype(X)}(X)
     end
 end
 LogLogistic() = LogLogistic(1,1)
-params(d::LogLogistic) = (d.X.μ,d.X.σ)
+params(d::LogLogistic) = (d.X.μ,d.X.θ)
 @distr_support LogLogistic 0.0 Inf
 function loghazard(d::LogLogistic, t::Real)
     lt = log(t)
-    lpdf0 = logpdf(Logistic(d.X.μ, d.X.σ), lt)
-    ls0 = logccdf(Logistic(d.X.μ, d.X.σ), lt)
+    lpdf0 = logpdf(Logistic(d.X.μ, d.X.θ), lt)
+    ls0 = logccdf(Logistic(d.X.μ, d.X.θ), lt)
     return lpdf0 - ls0 - lt
 end
 function cumhazard(d::LogLogistic,t::Real)
     lt = log.(t)
-    return -logccdf.(Logistic(d.X.μ, d.X.σ), lt)
+    return -logccdf.(Logistic(d.X.μ, d.X.θ), lt)
 end
 logpdf(d::LogLogistic, t::Real) = loghazard(d,t) - cumhazard(d,t)
 cdf(d::LogLogistic, t::Real) = -expm1(-cumhazard(d,t))
+rand(rng::AbstractRNG, d::LogLogistic) = exp(rand(rng,d.X))

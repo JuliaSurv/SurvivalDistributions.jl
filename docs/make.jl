@@ -26,6 +26,8 @@ makedocs(;
             "distros/GenGamma.md",
             "distros/PGW.md",
             "distros/EW.md",
+            "distros/LogLogistic.md",
+            "distros/PCHD.md"
         ],
         "references.md"
     ],

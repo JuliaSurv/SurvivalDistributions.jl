@@ -28,7 +28,7 @@ function cumhazard(D::PiecewiseConstantHazardDistribution, t::Real)
     # We consider that the last box is in fact infinitely wide (exponential tail)
     return Λ + (t-u)*L.λ[end] 
 end
-function quantile(D::PiecewiseConstantHazardDistribution, t::Real)
+function quantile(D::PiecewiseConstantHazardDistribution, p::Real)
     Λ_target = -log(1-p)
     Λ = 0.0
     u = 0.0
@@ -42,19 +42,19 @@ function quantile(D::PiecewiseConstantHazardDistribution, t::Real)
     end
     return u
 end
-function Distributions.expectation(L::Life)
+function expectation(L::PiecewiseConstantHazardDistribution)
     S = 1.0
     E = 0.0
-    for j in eachindex(L.∂t)
-        if L.λ[j] > 0
-            S_inc = exp(-L.λ[j]*L.∂t[j])
-            E += S * (1 - S_inc) / L.λ[j]
+    for j in eachindex(D.∂t)
+        if D.λ[j] > 0
+            S_inc = exp(-D.λ[j]*D.∂t[j])
+            E += S * (1 - S_inc) / D.λ[j]
             S *= S_inc
         else
-            E += S * L.∂t[j]
+            E += S * D.∂t[j]
         end
     end
     # This reminder assumes a exponential life time afer the maximuum age.
-    R = S / L.λ[end]
+    R = ifelse(D.λ[end] == 0.0, 0.0, S / D.λ[end])
     return E + R
 end
