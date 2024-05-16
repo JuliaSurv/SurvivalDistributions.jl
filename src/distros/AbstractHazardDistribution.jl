@@ -1,6 +1,3 @@
-
-
-# Define our hazard-based distributions: 
 abstract type AbstractHazardDistribution <: ContinuousUnivariateDistribution end
 @distr_support AbstractHazardDistribution 0.0 Inf
 loghazard(X::AbstractHazardDistribution, t::Real) = log(hazard(X,t))

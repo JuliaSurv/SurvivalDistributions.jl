@@ -12,11 +12,15 @@ module SurvivalDistributions
     export censored_loglikelihood, hazard, loghazard, cumhazard
 
     # Export other distributions: 
+    include("distros/AbstractHazardDistribution.jl")
+    include("distros/PiecewiseConstantHazardDistribution.jl")
     include("distros/ExpoDist.jl")
+
     include("distros/ExponentiatedWeibull.jl")
     include("distros/GeneralizedGamma.jl")
     include("distros/PowerGeneralizedWeibull.jl")
     include("distros/LogLogistic.jl")
-    export ExpoDist, ExponentiatedWeibull, GeneralizedGamma, PowerGeneralizedWeibull, LogLogistic
+
+    export ExpoDist, ExponentiatedWeibull, GeneralizedGamma, PowerGeneralizedWeibull, LogLogistic, PiecewiseConstantHazardDistribution
 
 end
