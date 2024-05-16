@@ -1,18 +1,17 @@
 """
-    PowerGeneralizedWeibull(sigma,nu,gamma)
+    PowerGeneralizedWeibull(σ,ν,γ)
 
-The *PowerGeneralizedWeibull distribution* with scale `sigma`, shape `nu` and second shape `gamma` has probability density function 
+The Power Generalised Weibull (PGW) distribution is a three-parameter distribution with support on ``{\\mathbb R}_+``. The corresponding hazard function can accommodate bathtub, unimodal and monotone (increasing and decreasing) hazard shapes. The PGW distribution has become popular in survival analysis given the tractability of its hazard and survival functions. 
+
+The `PowerGeneralizedWeibull(σ,ν,γ)` distribution, with scale `σ`, shape `ν` (nu) and second shape `γ` has probability density function 
 
 ```math
-f(x; parameters) = ...
+f(t;σ,ν,γ) = \\dfrac{ν}{γ σ^ν}t^{ν-1} \\left[ 1 + \\left(\\dfrac{t}{σ}\\right)^ν\\right]^{\\left(\\frac{1}{γ}-1\\right)} \\exp\\left\\{ 1- \\left[ 1 + \\left(\\dfrac{t}{σ}\\right)^ν\\right]^{\\frac{1}{γ}}
+\\right\\}.
 ```
 
-More details and examples of usage could be provided in this docstring.
-
-Maybe this distribution could simply be constructed from a transformation of the original Weibull ? 
-
 References: 
-* [Link to my reference so that people understand what it is](https://myref.com) 
+* [nikulin:2009](@cite) Nikulin, M. and Haghighi, F. On the power generalized Weibull family: model for cancer censored data. Metron -- International Journal of Statistics, 2009
 """
 struct PowerGeneralizedWeibull{T<:Real} <: ContinuousUnivariateDistribution
     sigma::T

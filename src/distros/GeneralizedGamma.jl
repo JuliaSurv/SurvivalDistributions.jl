@@ -1,18 +1,11 @@
 """
-    GeneralizedGamma(sigma,nu,gamma)
+    GeneralizedGamma(σ,nu,gamma)
 
-The *GeneralizedGamma distribution* with scale `sigma`, shape `nu` and second shape `gamma` has probability density function 
-
-```math
-f(x; parameters) = ...
-```
-
-More details and examples of usage could be provided in this docstring.
-
-Maybe this distribution could simply be constructed from a transformation of the original Weibull ? 
+The [Generalised Gamma](https://en.wikipedia.org/wiki/Generalized_gamma_distribution) (GG) distribution is a three-parameter distribution with support on ``{\\mathbb R}_+``. The corresponding hazard function can accommodate bathtub, unimodal and monotone (increasing and decreasing) hazard shapes. The GG distribution has become popular in survival analysis due to its flexibility. 
 
 References: 
-* [Link to my reference so that people understand what it is](https://myref.com) 
+* [Generalised Gamma](https://en.wikipedia.org/wiki/Generalized_gamma_distribution)
+* [stacy:1962](@cite) Stacy, E.W. A generalization of the gamma distribution, *The Annals of Mathematical Statistics*, 1962
 """
 struct GeneralizedGamma{T<:Real} <: ContinuousUnivariateDistribution
     sigma::T
