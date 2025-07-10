@@ -9,9 +9,15 @@
 [![PkgEval](https://JuliaCI.github.io/NanosoldierReports/pkgeval_badges/S/SurvivalDistributions.svg)](https://JuliaCI.github.io/NanosoldierReports/pkgeval_badges/S/SurvivalDistributions.html)
 [![Aqua](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
 
-The SurvivalDistributions.jl package is part of the JuliaSurv survival analysis suite. It provides a few utility functions (related to hazard and censoring) to manipulate distributions from [`Distributions.jl`](https://github.com/JuliaStats/Distributions.jl), but most importantly a few Distributions familieis that are sometimes usefull when doing survival analysis. 
+The SurvivalDistributions.jl package is part of the JuliaSurv survival analysis suite. It provides a few utility functions (related to hazard and censoring) to manipulate distributions from [`Distributions.jl`](https://github.com/JuliaStats/Distributions.jl), but most importantly a few extra `Distribution` families that are sometimes usefull when doing survival analysis:
+- Power Generalized Weibull,
+- Exponentaited distributions (e.g. exponentiated Weibull)
+- Generalized Gamma,
+- LogLogisitc,
+- Piecewise constant hazard distributions (such as coming out of Kaplan-Meier)
+- Abstract hazard distribution (from a user-provided hazard function). 
 
-The implementation is very light and does limit its dependencies to a minimum (namely, `Distributions.jl`), so that depending on `SurvivalDistributions.jl` should not incur extra startup time.
+The implementation is very light and does limit its dependencies to a minimum (namely, `Distributions.jl`), so that depending on `SurvivalDistributions.jl` should not be an issue.
 
 Do not hesitate to open an issue if you want to add another distribution that you might find usefull for survival analysis, or if you want to discuss about the content of the package itself ! 
 
