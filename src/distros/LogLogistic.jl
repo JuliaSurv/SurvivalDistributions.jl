@@ -17,7 +17,11 @@ struct LogLogistic{T<:Real} <: ContinuousUnivariateDistribution
     X::Logistic{T}
     function LogLogistic(μ,σ)
         X = Logistic(μ, σ)
-        return new{eltype(X)}(X)
+        # Parametrise on the parameter type, not `eltype(X)`: for a continuous
+        # distribution `eltype` is the *variate* type (`Float64`), which would
+        # narrow `Logistic{<:Dual}` back to `Logistic{Float64}` and break
+        # ForwardDiff through the parameters (e.g. when fitting via AD).
+        return new{typeof(X.μ)}(X)
     end
 end
 LogLogistic() = LogLogistic(1,1)
