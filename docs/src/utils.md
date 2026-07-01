@@ -50,7 +50,7 @@ mkplot(LogNormal(0.5, 1))
 ### LogLogistic
 
 ```@example 1
-mkplot(LogLogistic(1, 0.5))
+mkplot(SurvivalDistributions.LogLogistic(1, 0.5))
 ```
 
 ### Weibull

@@ -13,7 +13,7 @@ Let us sample a dataset from an Exponentiated Weibull distribution:
 ```@example 1
 using SurvivalDistributions, Distributions, Random, Plots, StatsBase
 Random.seed!(123)
-D = LogLogistic(1,2)
+D = SurvivalDistributions.LogLogistic(1,2)
 sim = rand(D,1000);
 ```
 
